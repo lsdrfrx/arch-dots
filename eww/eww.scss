@@ -1,0 +1,54 @@
+$foreground: #f8f9e8;
+$disabled: #666666;
+$background: #171c1f;
+
+* {
+  all: unset;
+  font-family: "Ubuntu Nerd Font";
+  color: $foreground;
+}
+
+.statusbar {
+  background-color: #171c1f;
+  padding: 0 10px;
+
+  .workspaces {
+    padding: 10px;
+  }
+
+  .workspaceButton {
+    background-color: $disabled;
+    min-height: 5px;
+    min-width: 10px;
+    border-radius: 10px;
+    transition: all ease 0.3s;
+
+    &.active {
+      min-width: 30px;
+      background-color: $foreground;
+    }
+
+    &.occupied {
+      background-color: $foreground;
+    }
+  }
+}
+
+
+.clock {
+  .date {
+    font-family: "Ubuntu";
+    font-size: 24px;
+  }
+
+  .time {
+    font-family: "Ubuntu";
+    font-size: 86px;
+  }
+}
+
+.border {
+  border: 10px solid $background;
+}
+
+

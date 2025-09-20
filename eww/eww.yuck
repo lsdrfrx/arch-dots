@@ -1,0 +1,96 @@
+(defwindow statusbar
+           :monitor 0
+           :geometry (geometry :y "0px"
+                               :width "100%"
+                               :height "30px"
+                               :anchor "top center")
+           :stacking "fg"
+           :exclusive true
+  (statusbar))
+
+(defpoll current-workspace :interval "0s"
+  `hyprctl activeworkspace | head -n 1 | awk '{ print $3; }'`)
+
+(defpoll occupied-workspaces :interval "0s"
+  `hyprctl workspaces | grep "workspace ID" | awk '{ print $3; }' | xargs`)
+
+(defwidget statusbar []
+  (centerbox :class "statusbar"
+    (left-modules)
+    (workspaces)
+    (right-modules)
+  ))
+
+(defwidget left-modules []
+  (box :class "leftModules"
+       :space-evenly false
+    (button :onclick "" "")))
+
+(defwidget right-modules []
+  (box :class "rightModules"
+       :space-evenly false
+       :halign "end"
+       :spacing 15
+    (systray :icon-size 16)
+    (divider)
+    (keyboard-layout)
+    (divider)
+    (volume)
+    (divider)
+    (time)
+    (divider)
+    (button " ")
+  ))
+
+(defwidget keyboard-layout []
+  (label :text "keyboard"))
+
+(defwidget volume []
+  (button "volume"))
+
+(defwidget divider []
+  (label :text "|"))
+
+(defwidget time []
+  (label :text {datetime["time"]}))
+
+(defwidget workspaces []
+  (box :class "workspaces"
+       :spacing 5
+       :space-evenly false
+       :halign "center"
+    (workspace-button :idx 1)
+    (workspace-button :idx 2)
+    (workspace-button :idx 3)
+    (workspace-button :idx 4)
+    (workspace-button :idx 5)
+    (workspace-button :idx 6)
+    (workspace-button :idx 7)
+    (workspace-button :idx 8)
+    (workspace-button :idx 9)
+  ))
+
+(defwidget workspace-button [idx]
+  (button :class {
+    idx == current-workspace ? "workspaceButton active" :
+      matches(occupied-workspaces, idx) ? "workspaceButton occupied" : "workspaceButton"}
+          :onclick {"hyprctl dispatch workspace " + idx}))
+
+; ===================================================
+
+(defwindow clock
+           :monitor 0
+           :geometry (geometry :y "100px" :anchor "top center" :width "300px" :height "200px" )
+           :stacking "bg"
+  (clock))
+
+(defpoll datetime :interval "1s"
+  `date +'{"date": "%A, %d %B", "time": "%H:%M"}'`)
+
+(defwidget clock []
+  (box :class "clock"
+       :orientation "vertical"
+       :space-evenly false
+    (label :class "date" :text {datetime['date']})
+    (label :class "time" :text {datetime['time']})))
+

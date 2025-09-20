@@ -1,0 +1,47 @@
+{
+  "diagnostic.displayByVimDiagnostic": true,
+
+  "suggest.virtualText": true,
+  "suggest.minTriggerInputLength": 1,
+  "suggest.floatConfig": {
+    "border": false,
+  },
+  "suggest.completionItemKindLabels": {
+    "text": "󰦨",
+    "method": "",
+    "function": "󰊕",
+    "constructor": "󰡱",
+    "field": "",
+    "variable": "",
+    "class": "",
+    "interface": "",
+    "module": "",
+    "property": "",
+    "unit": "u",
+    "value": "",
+    "enum": "",
+    "keyword": "",
+    "snippet": "",
+    "color": "",
+    "file": "",
+    "reference": "",
+    "folder": "",
+    "enumMember": "",
+    "constant": "",
+    "struct": "",
+    "event": "",
+    "operator": "",
+    "typeParameter": "",
+    "default": ""
+  },
+  "languageserver": {
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": ["--lsp"],
+      "filetypes": ["haskell", "lhaskell"],
+      "trace.server": "verbose",
+      "rootPatterns": ["*.cabal", "cabal.project"],
+    },
+  },
+  "snippets.ultisnips.pythonPrompt": false,
+}
