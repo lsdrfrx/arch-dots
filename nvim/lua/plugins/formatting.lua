@@ -11,6 +11,8 @@ return {
 					typescript = { "prettier" },
 					javascript = { "prettier" },
 					rust = { "rustfmt" },
+					elixir = { "mix" },
+					eelixir = { "mix" },
 				},
 			})
 		end,

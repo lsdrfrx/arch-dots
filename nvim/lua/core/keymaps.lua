@@ -9,6 +9,7 @@ map("n", "<leader>ff", ":Telescope find_files<CR>", { silent = true })
 map("n", "<leader>fg", ":Telescope live_grep<CR>", { silent = true })
 map("n", "<leader>fb", ":Telescope buffers<CR>", { silent = true })
 map("n", "<leader>fm", ":Telescope marks<CR>", { silent = true })
+map("n", "<leader>fp", ":Telescope projects<CR>", { silent = true })
 map("n", "<A-d>", ":Telescope coc definitions<CR>", { silent = true })
 map("n", "<A-r>", ":Telescope coc references<CR>", { silent = true })
 
@@ -32,8 +33,7 @@ function! ShowDocumentation()
 endfunction
 ]])
 
-map("n", "<A-t>", "<cmd>FloatermToggle<CR>", { silent = true })
-map("t", "<A-t>", "<cmd>FloatermToggle<CR>", { silent = true })
+map("n", "<leader>u", ":UndotreeToggle<CR>", { silent = true })
 
 -- Move between panes
 map("n", "<A-j>", ":wincmd h<CR>", { silent = true })

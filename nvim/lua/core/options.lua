@@ -8,7 +8,7 @@ opt.cursorline = true
 opt.wrap = false
 opt.history = 1000
 
--- Visual enchancement
+-- Visual enhancement
 opt.showcmd = true
 opt.showmode = true
 opt.scrolloff = 5

@@ -1,6 +1,5 @@
 {
   "diagnostic.displayByVimDiagnostic": true,
-
   "suggest.virtualText": true,
   "suggest.minTriggerInputLength": 1,
   "suggest.floatConfig": {
@@ -37,11 +36,25 @@
   "languageserver": {
     "haskell": {
       "command": "haskell-language-server-wrapper",
-      "args": ["--lsp"],
-      "filetypes": ["haskell", "lhaskell"],
+      "args": [
+        "--lsp"
+      ],
+      "filetypes": [
+        "haskell",
+        "lhaskell"
+      ],
       "trace.server": "verbose",
-      "rootPatterns": ["*.cabal", "cabal.project"],
+      "rootPatterns": [
+        "*.cabal",
+        "cabal.project"
+      ],
     },
   },
-  "snippets.ultisnips.pythonPrompt": false,
+  "elixir.pathToElixirLS": "~/soft/elixir/language_server.sh",
+  "php-cs-fixer.activateTool": "pint",
+  "Lua.workspace.library": [
+    "vim",
+    "nvim",
+    "runtime"
+  ]
 }
