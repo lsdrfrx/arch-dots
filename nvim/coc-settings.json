@@ -56,5 +56,6 @@
     "vim",
     "nvim",
     "runtime"
-  ]
+  ],
+  "snippets.ultisnips.pythonPrompt": false
 }

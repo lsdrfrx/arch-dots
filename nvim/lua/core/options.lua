@@ -17,14 +17,11 @@ opt.signcolumn = "yes"
 opt.conceallevel = 3
 
 -- Folds
-vim.o.foldtext =
-	[[substitute(getline(v:foldstart),'\t',repeat('\ ',&tabstop),'g').' ... ' . '(' . (v:foldend - v:foldstart + 1) . ' lines)']]
-vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
-opt.foldlevel = 20
-opt.foldlevelstart = 20
+-- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep:|,foldclose:]]
+-- vim.o.foldcolumn = 'auto:9'
+opt.foldlevel = 99
+opt.foldlevelstart = 99
+opt.foldenable = true
 
 -- Indent and tabs
 opt.autoindent = true
