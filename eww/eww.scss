@@ -1,35 +1,39 @@
-$foreground: #f8f9e8;
+$fg-primary: #f8f9e8;
 $disabled: #666666;
-$background: #171c1f;
+$bg-primary: #171c1f;
+$bg-secondary: #292c2f;
+$radius: 10px;
 
 * {
   all: unset;
   font-family: "Ubuntu Nerd Font";
-  color: $foreground;
+  color: $fg-primary;
 }
 
 .statusbar {
-  background-color: #171c1f;
-  padding: 0 10px;
+  background-color: $bg-primary;
+  padding: 4px 10px;
 
   .workspaces {
     padding: 10px;
+    background-color: $bg-secondary;
+    border-radius: 30px;
   }
 
   .workspaceButton {
     background-color: $disabled;
-    min-height: 5px;
-    min-width: 10px;
-    border-radius: 10px;
+    min-height: 6px;
+    min-width: 8px;
+    border-radius: $radius;
     transition: all ease 0.3s;
 
     &.active {
       min-width: 30px;
-      background-color: $foreground;
+      background-color: $fg-primary;
     }
 
     &.occupied {
-      background-color: $foreground;
+      background-color: $fg-primary;
     }
   }
 }
@@ -48,7 +52,11 @@ $background: #171c1f;
 }
 
 .border {
-  border: 10px solid $background;
+  border: 10px solid $bg-primary;
 }
 
 
+.powermenu {
+  background-color: $bg-primary;
+  border-radius: $radius;
+}

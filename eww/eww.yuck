@@ -2,7 +2,7 @@
            :monitor 0
            :geometry (geometry :y "0px"
                                :width "100%"
-                               :height "30px"
+                               :height "36px"
                                :anchor "top center")
            :stacking "fg"
            :exclusive true
@@ -39,8 +39,7 @@
     (divider)
     (time)
     (divider)
-    (button " ")
-  ))
+    (button " ")))
 
 (defwidget keyboard-layout []
   (label :text "keyboard"))
@@ -67,8 +66,7 @@
     (workspace-button :idx 6)
     (workspace-button :idx 7)
     (workspace-button :idx 8)
-    (workspace-button :idx 9)
-  ))
+    (workspace-button :idx 9)))
 
 (defwidget workspace-button [idx]
   (button :class {
@@ -94,3 +92,45 @@
     (label :class "date" :text {datetime['date']})
     (label :class "time" :text {datetime['time']})))
 
+; ===================================================
+
+(defwindow powermenu
+           :monitor 0
+           :geometry (geometry :x "10px"
+                               :y "10px"
+                               :anchor "top right"
+                               :width "300px"
+                               :height "200px")
+           :stacking "fg"
+  (powermenu))
+
+(defvar power-expanded false)
+
+(defwidget powermenu []
+  (box :orientation "vertical"
+       :class "powermenu"
+    (box
+      (label :text "volume")
+      (scale :class "volume"))
+    (box
+      (label :text "brightness")
+      (scale :class "brightness"))
+    (box
+      (button "")
+      (button "󰈈"))
+    (box
+      (label :text "CPU")
+      (label :text "MEM")
+      (label :text "TEMP"))
+    (box :class "powerbuttons"
+      (eventbox
+        :onhover "eww update power-expanded=true"
+        :onhoverlost "eww update power-expanded=false"
+        (box
+        (label :text "⏻")
+      (revealer :reveal power-expanded
+                :transition "slideright"
+                :duration "1000ms"
+        (box
+        (label :text "")
+        (label :text ""))))))))
