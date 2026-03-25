@@ -1,6 +1,6 @@
 local map = vim.keymap.set
 
-map("n", "-", "<cmd>Oil --float<CR>", { silent = true })
+map("n", "-", "<cmd>Neotree<CR>", { silent = true })
 map("n", "<ESC>", ":noh<CR><ESC>", { silent = true })
 map("i", "<C-BS>", "<C-w>", { silent = true })
 
@@ -18,19 +18,6 @@ noremap j h
 noremap k j
 noremap l k
 noremap ; l
-
-inoremap <expr> <TAB> coc#pum#visible() ? coc#pum#select_confirm() : "\<TAB>"
-inoremap <silent><expr> <c-space> coc#refresh()
-
-nnoremap <silent> K :call ShowDocumentation()<CR>
-
-function! ShowDocumentation()
-  if CocAction('hasProvider', 'hover')
-    call CocActionAsync('doHover')
-  else
-    call feedkeys('K', 'in')
-  endif
-endfunction
 ]])
 
 map("n", "<leader>u", ":UndotreeToggle<CR>", { silent = true })
