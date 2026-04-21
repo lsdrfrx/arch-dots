@@ -18,6 +18,8 @@ noremap j h
 noremap k j
 noremap l k
 noremap ; l
+
+tnoremap <Esc><Esc> <C-\><C-n>
 ]])
 
 map("n", "<leader>u", ":UndotreeToggle<CR>", { silent = true })
