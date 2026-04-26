@@ -7,8 +7,8 @@ return {
 			vim.lsp.enable("basedpyright")
 			vim.lsp.enable("bashls")
 			vim.lsp.enable("elixirls")
-			vim.lsp.enable("rust_analyzer")
-			vim.lsp.enable("zls")
+      vim.lsp.enable("nixd")
+      vim.lsp.enable("clangd")
 		end,
 	},
 }

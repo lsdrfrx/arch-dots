@@ -1,5 +1,3 @@
-#!/bin/bash
-
 if [[ "$1" == "next" ]]; then
   hyprctl switchxkblayout -- --gaming-keyboard next
 elif [[ "$1" == "get" ]]; then

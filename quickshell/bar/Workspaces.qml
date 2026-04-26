@@ -27,7 +27,7 @@ Singleton {
 
   Process {
     id: occupiedWorkspacesProc
-    command: ["/home/lsdrfrx/.config/quickshell/scripts/workspaces.sh", "occupied"]
+    command: ["bash", "/home/lsdrfrx/.config/quickshell/scripts/workspaces.sh", "occupied"]
     running: true
 
     stdout: StdioCollector {

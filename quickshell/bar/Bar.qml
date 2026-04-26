@@ -138,7 +138,7 @@ PanelWindow {
 
         Process {
           id: layoutProc
-          command: ["/home/lsdrfrx/.config/quickshell/scripts/keyboard.sh", "get"]
+          command: ["bash", "/home/lsdrfrx/.config/quickshell/scripts/keyboard.sh", "get"]
           running: true
 
           stdout: StdioCollector {
@@ -148,7 +148,7 @@ PanelWindow {
 
         Process {
           id: switchProc
-          command: ["/home/lsdrfrx/.config/quickshell/scripts/keyboard.sh", "next"]
+          command: ["bash", "/home/lsdrfrx/.config/quickshell/scripts/keyboard.sh", "next"]
           onRunningChanged: if (!running) layoutProc.running = true
         }
 
