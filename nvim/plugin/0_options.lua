@@ -1,4 +1,8 @@
 local opt = vim.opt
+local g = vim.g
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 -- Base options
 opt.compatible = false
@@ -17,8 +21,6 @@ opt.signcolumn = "yes"
 opt.conceallevel = 3
 
 -- Folds
--- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep:|,foldclose:]]
--- vim.o.foldcolumn = 'auto:9'
 opt.foldlevel = 99
 opt.foldlevelstart = 99
 opt.foldenable = true
@@ -52,30 +54,6 @@ vim.cmd("filetype indent on")
 vim.cmd("syntax on")
 vim.cmd("set textwidth=500")
 vim.cmd("set fo+=t")
-
--- vim.cmd("hi WinBar guibg=bg")
--- vim.cmd("hi WinBarNC guibg=bg")
--- vim.cmd("hi TerminalNormal guibg=bg")
--- vim.cmd("hi TerminalBorder guibg=bg")
--- vim.cmd("hi NeoTreeIndentMarker guifg=bg")
--- vim.cmd("hi SignColumn guibg=bg")
--- vim.cmd("hi StatusLine guibg=bg")
-
-vim.diagnostic.config({
-	signs = false,
-	float = {
-		style = "minimal",
-		focusable = false,
-		header = "",
-		prefix = "",
-	},
-	virtual_text = {
-		source = "if_many",
-		prefix = " ",
-	},
-	update_in_insert = true,
-	severity_sort = true,
-})
 
 opt.laststatus = 3
 opt.pumheight = 10

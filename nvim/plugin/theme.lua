@@ -1,5 +1,9 @@
 local opt = vim.opt
 
+vim.pack.add({
+	"https://github.com/sainnhe/everforest",
+})
+
 opt.background = "light"
 vim.cmd("colorscheme everforest")
 
